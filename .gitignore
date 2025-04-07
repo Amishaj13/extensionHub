@@ -1,4 +1,4 @@
 bots/statics
 public/chroma_db
 venv
-env
+.env
