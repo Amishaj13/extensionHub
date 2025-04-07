@@ -4,6 +4,7 @@ requests
 python-dotenv
 beautifulsoup4
 langchain
+chromadb
 langchain-community
 langchain-google-genai
 gunicorn
