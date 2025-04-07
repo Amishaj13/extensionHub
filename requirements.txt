@@ -3,9 +3,9 @@ uvicorn
 requests
 python-dotenv
 beautifulsoup4
+pydantic
 langchain
-chromadb
 langchain-community
 langchain-google-genai
-gunicorn
-pydantic
+langchain-chroma
+chromadb
