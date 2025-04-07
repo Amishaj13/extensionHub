@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Docs Bot - AI Assistant</title>
+    <meta name="description" content="Enhance your document creation with smart formatting and content suggestions" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../public/chatbot.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Chat Interface Styles */
+      .chat-interface {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+        margin-bottom: 1rem;
+      }
+      
+      .chat-history {
+        max-height: 250px;
+        overflow-y: auto;
+        padding: 1rem;
+        background-color: #f8fafc;
+      }
+      
+      .user-message, .bot-response {
+        margin-bottom: 1rem;
+        padding: 0.75rem 1rem;
+        border-radius: var(--radius);
+        max-width: 85%;
+      }
+      
+      .user-message {
+        background-color: var(--secondary);
+        align-self: flex-end;
+        margin-left: auto;
+      }
+      
+      .user-message p {
+        margin-bottom: 0;
+      }
+      
+      .bot-response {
+        background-color: white;
+        border: 1px solid var(--border);
+      }
+      
+      .bot-response p, .bot-response ul {
+        margin-bottom: 0.5rem;
+      }
+      
+      .bot-response p:last-child {
+        margin-bottom: 0;
+      }
+      
+      .bot-response ul {
+        padding-left: 1.5rem;
+      }
+      
+      .input-area {
+        display: flex;
+        padding: 0.75rem;
+        background-color: white;
+        border-top: 1px solid var(--border);
+      }
+      
+      .input-area input {
+        flex-grow: 1;
+        padding: 0.5rem 0.75rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        font-size: 0.875rem;
+      }
+      
+      .input-area input:focus {
+        outline: 1px solid var(--primary);
+        border-color: var(--primary);
+      }
+      
+      .send-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        margin-left: 0.5rem;
+        background: var(--gradient);
+        border: none;
+        border-radius: var(--radius);
+        cursor: pointer;
+        transition: var(--transition);
+      }
+      
+      .send-button:hover {
+        opacity: 0.9;
+      }
+      
+      .send-button img {
+        width: 20px;
+        height: 20px;
+        filter: brightness(0) invert(1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root">
+      <header class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="../index.html">
+              <span>AI</span>Assistants
+            </a>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="../index.html#bots">Chatbots</a></li>
+              <li><a href="../index.html#how-it-works">How It Works</a></li>
+              <li><a href="../index.html#features">Features</a></li>
+              <li><a href="../index.html#faq">FAQ</a></li>
+            </ul>
+          </nav>
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <section class="bot-hero">
+        <div class="container">
+          <div class="bot-hero-content">
+            <div class="back-link">
+              <a href="../index.html#bots">
+                <img src="https://api.iconify.design/material-symbols:arrow-back-rounded.svg" alt="Back">
+                Back to All Bots
+              </a>
+            </div>
+            <div class="bot-icon large">
+              <img src="./statics/docs.png" alt="Google Docs icon">
+            </div>
+            <h1 class="reveal-text">Google Docs Bot</h1>
+            <p class="bot-description reveal-text delay-1">Enhance your document creation with smart formatting and content suggestions</p>
+            
+            <div class="cta-buttons reveal-text delay-2">
+              <a href="#" class="button primary">
+                <img src="https://api.iconify.design/bi:download.svg" alt="Install">
+                Install Extension
+              </a>
+              <a href="#demo" class="button secondary">
+                See Demo
+              </a>
+            </div>
+          </div>
+          
+          <div class="bot-hero-image reveal-image">
+            <div class="demo-window">
+              <div class="demo-window-header">
+                <div class="demo-dot"></div>
+                <div class="demo-dot"></div>
+                <div class="demo-dot"></div>
+                <div class="demo-title">Document Editor</div>
+              </div>
+              <div class="demo-content">
+                <div class="text-editor">
+                  <div class="text-content">
+                    <p>The implementation of AI-driven solutions has resulted in <span class="suggestion">significant</span> improvements in productivity across various departments.</p>
+                    <p>Our team <span class="error">have</span> identified several opportunities for further optimization using machine learning algorithms.</p>
+                  </div>
+                </div>
+                <div class="assistant-prompt">
+                  <div class="assistant-icon">
+                    <img src="https://api.iconify.design/mdi:robot.svg" alt="AI Assistant">
+                  </div>
+                  <div class="assistant-message">
+                    <p>Ask me anything about your document:</p>
+                    <div class="chat-interface">
+                      <div class="chat-history">
+                        <div class="user-message">
+                          <p>How can I improve the flow of my introduction paragraph?</p>
+                        </div>
+                        <div class="bot-response">
+                          <p>I've analyzed your introduction and have some suggestions:</p>
+                          <ul>
+                            <li>Consider starting with a more engaging hook to capture reader attention</li>
+                            <li>Your third sentence could connect more clearly to your main thesis</li>
+                            <li>Try adding a transition sentence between your background and your key argument</li>
+                          </ul>
+                          <p>Would you like me to suggest specific rewrites for any of these points?</p>
+                        </div>
+                      </div>
+                      <div class="input-area">
+                        <input type="text" placeholder="Ask about your document..." aria-label="Ask assistant">
+                        <button class="send-button">
+                          <img src="https://api.iconify.design/material-symbols:send-rounded.svg" alt="Send">
+                        </button>
+                      </div>
+                    </div>
+                    <div class="assistant-actions">
+                      <button>Apply Suggestions</button>
+                      <button>Format Document</button>
+                      <button>Check Citations</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="bot-features">
+        <div class="container">
+          <h2 class="section-title reveal-text">Key Features</h2>
+          
+          <div class="features-grid three-columns">
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/mdi:format-text.svg" alt="Text formatting icon">
+              </div>
+              <h3>Smart Formatting</h3>
+              <p>Automatically formats your document according to common style guides and professional standards.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/mdi:lightbulb-outline.svg" alt="Suggestion icon">
+              </div>
+              <h3>Content Suggestions</h3>
+              <p>Get intelligent suggestions for improving clarity, conciseness, and engagement in your writing.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/mdi:translate.svg" alt="Translation icon">
+              </div>
+              <h3>Language Translation</h3>
+              <p>Translate sections of your document into multiple languages with a single click.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/mdi:file-chart.svg" alt="Data icon">
+              </div>
+              <h3>Data Visualization</h3>
+              <p>Convert data tables into visual charts and graphs directly within your document.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/mdi:citation.svg" alt="Citation icon">
+              </div>
+              <h3>Citation Generator</h3>
+              <p>Generate properly formatted citations and bibliographies in various academic styles.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/mdi:voice.svg" alt="Voice icon">
+              </div>
+              <h3>Voice Dictation</h3>
+              <p>Use voice commands to format, edit, and create content in your documents.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" class="how-it-works bot-demo">
+        <div class="container">
+          <h2 class="section-title reveal-text">How It Works</h2>
+          
+          <div class="steps-container interactive">
+            <div class="demo-controls">
+              <button class="demo-nav prev" disabled>
+                <img src="https://api.iconify.design/material-symbols:arrow-back-ios-rounded.svg" alt="Previous">
+              </button>
+              <div class="demo-indicators">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <button class="demo-nav next">
+                <img src="https://api.iconify.design/material-symbols:arrow-forward-ios-rounded.svg" alt="Next">
+              </button>
+            </div>
+            
+            <div class="demo-slides">
+              <div class="demo-slide active">
+                <div class="step-content">
+                  <h3>1. Install the Extension</h3>
+                  <p>Add the Google Docs Bot to your browser with one click. Seamlessly integrates with your Google Docs interface.</p>
+                </div>
+                <div class="step-image">
+                  <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?auto=format&fit=crop&w=600&q=80" alt="Install Extension">
+                </div>
+              </div>
+              
+              <div class="demo-slide">
+                <div class="step-content">
+                  <h3>2. Write Naturally</h3>
+                  <p>Start creating your document while the AI assistant analyzes your content in real-time for potential improvements.</p>
+                </div>
+                <div class="step-image">
+                  <img src="https://images.unsplash.com/photo-1593642532744-d377ab507dc8?auto=format&fit=crop&w=600&q=80" alt="Write Naturally">
+                </div>
+              </div>
+              
+              <div class="demo-slide">
+                <div class="step-content">
+                  <h3>3. Review Suggestions</h3>
+                  <p>View contextual suggestions for formatting, content improvements, and style enhancements directly in your document.</p>
+                </div>
+                <div class="step-image">
+                  <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Review Suggestions">
+                </div>
+              </div>
+              
+              <div class="demo-slide">
+                <div class="step-content">
+                  <h3>4. Apply Enhancements</h3>
+                  <p>Implement AI-powered improvements with one click and watch your document transform into professional-quality content.</p>
+                </div>
+                <div class="step-image">
+                  <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Apply Enhancements">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <h2 class="section-title reveal-text">What Users Say</h2>
+          
+          <div class="testimonials-slider">
+            <div class="testimonial-card active reveal-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <img src="https://api.iconify.design/mdi:format-quote-open.svg" alt="Quote">
+                </div>
+                <p>"This Google Docs Bot has transformed how I write my academic papers. The citation generator alone has saved me hours of work!"</p>
+                <div class="testimonial-author">
+                  <img src="https://randomuser.me/api/portraits/women/54.jpg" alt="Sarah J.">
+                  <div>
+                    <h4>Sarah J.</h4>
+                    <p>Graduate Student</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card reveal-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <img src="https://api.iconify.design/mdi:format-quote-open.svg" alt="Quote">
+                </div>
+                <p>"Our marketing team uses this bot daily. The content suggestions help us maintain a consistent brand voice across all our documentation."</p>
+                <div class="testimonial-author">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T.">
+                  <div>
+                    <h4>Michael T.</h4>
+                    <p>Marketing Director</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card reveal-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <img src="https://api.iconify.design/mdi:format-quote-open.svg" alt="Quote">
+                </div>
+                <p>"The data visualization feature is incredible! I can create professional charts from my spreadsheet data with just a few clicks."</p>
+                <div class="testimonial-author">
+                  <img src="https://randomuser.me/api/portraits/women/28.jpg" alt="Elena P.">
+                  <div>
+                    <h4>Elena P.</h4>
+                    <p>Financial Analyst</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-dots">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="faq-section">
+        <div class="container">
+          <h2 class="section-title reveal-text">Frequently Asked Questions</h2>
+          
+          <div class="faq-container">
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Is this extension compatible with other Google Workspace apps?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Yes! While optimized for Google Docs, our extension also provides similar functionality in Google Sheets and Google Slides, with features tailored to each application's specific needs.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Can I use the bot for collaborative documents?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Absolutely. The Google Docs Bot works seamlessly in collaborative documents. Each user with the extension installed can see suggestions, while those without it won't have their experience affected.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>How accurate is the citation generator?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Our citation generator follows the latest guidelines for APA, MLA, Chicago, and other academic styles. It's regularly updated to ensure accuracy and compliance with the most recent citation standards.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Does the bot access my document content?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>The Google Docs Bot processes your document content locally within your browser for most features. Some advanced features may require secure cloud processing, but we never store your document content and maintain strict privacy practices.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>What languages are supported?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>The extension supports writing assistance for English, Spanish, French, German, and Italian. The translation feature supports over 50 languages for document content translation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-card reveal-card">
+            <h2>Ready to Transform Your Document Experience?</h2>
+            <p>Join thousands of satisfied users who have improved their writing with our Google Docs Bot.</p>
+            <a href="#" class="button primary" style="background-color: white; color: black;">
+              <img src="https://api.iconify.design/bi:download.svg" alt="Install">
+              Install Extension Now
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <a href="../index.html">
+                <span>AI</span>Assistants
+              </a>
+              <p>Intelligent chatbots for every need</p>
+            </div>
+            
+            <div class="footer-links">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="../index.html#bots">Chatbots</a></li>
+                <li><a href="../index.html#how-it-works">How It Works</a></li>
+                <li><a href="../index.html#features">Features</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-links">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">API</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+              <h4>Stay Updated</h4>
+              <p>Subscribe to our newsletter for the latest updates and new features.</p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          
+          <div class="footer-bottom">
+            <p>&copy; 2023 AI Assistants. All rights reserved.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Twitter"><img src="https://api.iconify.design/mdi:twitter.svg" alt="Twitter"></a>
+              <a href="#" aria-label="LinkedIn"><img src="https://api.iconify.design/mdi:linkedin.svg" alt="LinkedIn"></a>
+              <a href="#" aria-label="GitHub"><img src="https://api.iconify.design/mdi:github.svg" alt="GitHub"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script src="../scripts.js"></script>
+    <script src="../public/chatbot.js" defer></script>
+
+  </body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grammar Checker - AI Chatbot</title>
+    <meta name="description" content="Advanced AI Grammar Checker to help you write error-free content" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../public/chatbot.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="root">
+      <header class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="../index.html">
+              <span>AI</span>Assistants
+            </a>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="../index.html#bots">Chatbots</a></li>
+              <li><a href="../index.html#how-it-works">How It Works</a></li>
+              <li><a href="../index.html#features">Features</a></li>
+              <li><a href="../index.html#faq">FAQ</a></li>
+            </ul>
+          </nav>
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <section class="bot-hero">
+        <div class="container">
+          <div class="bot-hero-content">
+            <div class="back-link">
+              <a href="../index.html#bots">
+                <img src="https://api.iconify.design/material-symbols:arrow-back-rounded.svg" alt="Back">
+                Back to All Bots
+              </a>
+            </div>
+            <div class="bot-icon large">
+              <img src="statics/grammar.png" alt="Grammar checker icon">
+            </div>
+            <h1 class="reveal-text">Grammar Checker</h1>
+            <p class="bot-description reveal-text delay-1">Advanced AI-powered grammar and style checker that helps you write error-free content across all platforms.</p>
+            
+            <div class="cta-buttons reveal-text delay-2">
+              <a href="https://chrome.google.com/webstore/" class="button primary" target="_blank">
+                <img src="https://api.iconify.design/bi:download.svg" alt="Install">
+                Install from Chrome Web Store
+              </a>
+              <a href="#demo" class="button secondary">
+                See Demo
+              </a>
+            </div>
+          </div>
+          
+          <div class="bot-hero-image reveal-image">
+            <div class="demo-window">
+              <div class="demo-window-header">
+                <div class="demo-dot"></div>
+                <div class="demo-dot"></div>
+                <div class="demo-dot"></div>
+                <div class="demo-title">Document Editor</div>
+              </div>
+              <div class="demo-content">
+                <div class="text-editor">
+                  <div class="text-content">
+                    <p>The company <span class="error">have</span> been growing steadily over the past five years. <span class="suggestion">However</span>, recent market trends suggest that we should <span class="error">adapts</span> our strategy to remain competitive.</p>
+                    <p>We <span class="error">beleive</span> that investing in new technology will <span class="suggestion">significantly</span> improve our productivity and <span class="error">efficency</span>.</p>
+                  </div>
+                </div>
+                <div class="assistant-prompt">
+                  <div class="assistant-icon">
+                    <img src="https://api.iconify.design/mdi:robot.svg" alt="AI Assistant">
+                  </div>
+                  <div class="assistant-message">
+                    <p>I've found 4 issues in your text:</p>
+                    <div class="error-list">
+                      <div class="error-item">
+                        <span class="error-type">Grammar</span>
+                        <p><span class="error">have</span> → <span class="correction">has</span> (Subject-verb agreement)</p>
+                      </div>
+                      <div class="error-item">
+                        <span class="error-type">Grammar</span>
+                        <p><span class="error">adapts</span> → <span class="correction">adapt</span> (Verb form)</p>
+                      </div>
+                      <div class="error-item">
+                        <span class="error-type">Spelling</span>
+                        <p><span class="error">beleive</span> → <span class="correction">believe</span></p>
+                      </div>
+                      <div class="error-item">
+                        <span class="error-type">Spelling</span>
+                        <p><span class="error">efficency</span> → <span class="correction">efficiency</span></p>
+                      </div>
+                    </div>
+                    <div class="assistant-actions">
+                      <button>Fix All Issues</button>
+                      <button>Improve Style</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="bot-features">
+        <div class="container">
+          <h2 class="section-title reveal-text">Key Features</h2>
+          
+          <div class="features-grid three-columns">
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/mdi:format-letter-case.svg" alt="Grammar">
+              </div>
+              <h3>Advanced Grammar Checking</h3>
+              <p>Detect and correct complex grammatical errors, including subject-verb agreement, verb tense, and more.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/mdi:format-text.svg" alt="Spelling">
+              </div>
+              <h3>Spelling Correction</h3>
+              <p>Identify and fix spelling mistakes with context-aware suggestions that understand your intent.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/mdi:pen.svg" alt="Style">
+              </div>
+              <h3>Style Improvement</h3>
+              <p>Get suggestions to enhance your writing style, eliminate redundancies, and use more impactful language.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/ic:outline-integration-instructions.svg" alt="Integration">
+              </div>
+              <h3>Works Everywhere</h3>
+              <p>Seamlessly integrates with Gmail, Google Docs, social media platforms, and virtually any text field on the web.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/material-symbols:format-color-text.svg" alt="Clarity">
+              </div>
+              <h3>Clarity Analysis</h3>
+              <p>Evaluate the readability of your text and get suggestions to make your writing clearer and more concise.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/fluent:reading-mode-20-regular.svg" alt="Tone">
+              </div>
+              <h3>Tone Detection</h3>
+              <p>Understand the emotional tone of your writing and adjust it to match your intended audience and purpose.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" class="how-it-works bot-demo">
+        <div class="container">
+          <h2 class="section-title reveal-text">How It Works</h2>
+          
+          <div class="steps-container interactive">
+            <div class="demo-controls">
+              <button class="demo-nav prev" disabled>
+                <img src="https://api.iconify.design/material-symbols:arrow-back-ios-rounded.svg" alt="Previous">
+              </button>
+              <div class="demo-indicators">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <button class="demo-nav next">
+                <img src="https://api.iconify.design/material-symbols:arrow-forward-ios-rounded.svg" alt="Next">
+              </button>
+            </div>
+            
+            <div class="demo-slides">
+              <div class="demo-slide active">
+                <div class="step-content">
+                  <h3>1. Install the Extension</h3>
+                  <p>Add the Grammar Checker to your browser with one click from the Chrome Web Store. No account creation required to start.</p>
+                </div>
+                <div class="step-image">
+                  <img src="https://placehold.co/600x400/e9ecef/5d6b82?text=Install+Extension" alt="Install Extension">
+                </div>
+              </div>
+              
+              <div class="demo-slide">
+                <div class="step-content">
+                  <h3>2. Start Writing Anywhere</h3>
+                  <p>The assistant works automatically on any text field. As you type, it underlines potential errors and suggests improvements.</p>
+                </div>
+                <div class="step-image">
+                  <img src="https://placehold.co/600x400/e9ecef/5d6b82?text=Write+Anywhere" alt="Write Anywhere">
+                </div>
+              </div>
+              
+              <div class="demo-slide">
+                <div class="step-content">
+                  <h3>3. Review Suggestions</h3>
+                  <p>Hover over underlined text to see detailed explanations of the issues and suggested corrections.</p>
+                </div>
+                <div class="step-image">
+                  <img src="https://placehold.co/600x400/e9ecef/5d6b82?text=Review+Suggestions" alt="Review Suggestions">
+                </div>
+              </div>
+              
+              <div class="demo-slide">
+                <div class="step-content">
+                  <h3>4. Apply Corrections</h3>
+                  <p>Click on suggestions to apply them instantly, or open the assistant panel for a comprehensive review of all issues.</p>
+                </div>
+                <div class="step-image">
+                  <img src="https://placehold.co/600x400/e9ecef/5d6b82?text=Apply+Corrections" alt="Apply Corrections">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <h2 class="section-title reveal-text">What Users Say</h2>
+          
+          <div class="testimonials-slider">
+            <div class="testimonial-card active reveal-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <img src="https://api.iconify.design/mdi:format-quote-open.svg" alt="Quote">
+                </div>
+                <p>As a non-native English speaker, this tool has been a game-changer for my professional communication. It catches subtle errors that other checkers miss.</p>
+                <div class="testimonial-author">
+                  <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Thomas Weber">
+                  <div>
+                    <h4>Thomas Weber</h4>
+                    <p>Product Manager</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card reveal-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <img src="https://api.iconify.design/mdi:format-quote-open.svg" alt="Quote">
+                </div>
+                <p>I write dozens of emails daily, and this grammar checker has saved me from countless embarrassing mistakes. The style suggestions have also improved my writing.</p>
+                <div class="testimonial-author">
+                  <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Amanda Rodriguez">
+                  <div>
+                    <h4>Amanda Rodriguez</h4>
+                    <p>Customer Success Manager</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card reveal-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <img src="https://api.iconify.design/mdi:format-quote-open.svg" alt="Quote">
+                </div>
+                <p>As a content creator, having this tool check my work in real-time has improved my productivity tremendously. The suggestions are always spot-on.</p>
+                <div class="testimonial-author">
+                  <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="James Wilson">
+                  <div>
+                    <h4>James Wilson</h4>
+                    <p>Content Writer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-dots">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="faq-section">
+        <div class="container">
+          <h2 class="section-title reveal-text">Frequently Asked Questions</h2>
+          
+          <div class="faq-container">
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Is this grammar checker better than built-in spell checkers?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Yes! Unlike basic spell checkers, our AI-powered grammar assistant can detect contextual errors, suggest style improvements, and understand the meaning behind your sentences to provide more accurate suggestions.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Does it work in all languages?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Currently, our grammar checker fully supports English (US, UK, Australian, and Canadian), Spanish, French, and German. We're actively working on adding more languages based on user demand.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Is my writing data secure?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Absolutely. We process your text locally whenever possible, and any data sent to our servers is encrypted and never stored permanently. We do not sell or share your writing data with third parties under any circumstances.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>What's the difference between free and premium versions?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>The free version covers basic grammar and spelling corrections. Premium unlocks advanced features like style improvements, tone detection, clarity analysis, vocabulary enhancement, and plagiarism checking.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Can I use it for academic writing?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Yes! Our premium version includes citation formatting for APA, MLA, Chicago, and other academic styles. It also features a plagiarism checker to ensure your academic work is original and properly cited.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-card reveal-card">
+            <h2>Ready to Perfect Your Writing?</h2>
+            <p>Join millions of users who write with confidence using our AI Grammar Checker.</p>
+            <a href="https://chrome.google.com/webstore/" class="button primary" style="background-color: white; color: black;" target="_blank">
+              <img src="https://api.iconify.design/bi:download.svg" alt="Install">
+              Install Free Extension
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <a href="../index.html">
+                <span>AI</span>Assistants
+              </a>
+              <p>Intelligent chatbots for every need</p>
+            </div>
+            
+            <div class="footer-links">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="../index.html#bots">Chatbots</a></li>
+                <li><a href="../index.html#how-it-works">How It Works</a></li>
+                <li><a href="../index.html#features">Features</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-links">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">API</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+              <h4>Stay Updated</h4>
+              <p>Subscribe to our newsletter for the latest updates and new features.</p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          
+          <div class="footer-bottom">
+            <p>&copy; 2023 AI Assistants. All rights reserved.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Twitter"><img src="https://api.iconify.design/mdi:twitter.svg" alt="Twitter"></a>
+              <a href="#" aria-label="LinkedIn"><img src="https://api.iconify.design/mdi:linkedin.svg" alt="LinkedIn"></a>
+              <a href="#" aria-label="GitHub"><img src="https://api.iconify.design/mdi:github.svg" alt="GitHub"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script src="../scripts.js"></script>
+    <script src="../public/chatbot.js" defer></script>
+  </body>
+</html>

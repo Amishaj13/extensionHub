@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Chatbot Showcase</title>
+    <meta name="description" content="Discover powerful AI chatbots for productivity and assistance" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="public/chatbot.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  </head>
+
+  <body>
+    <div id="root">
+      <header class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="index.html">
+              <span>AI</span>Assistants
+            </a>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#bots">Extension</a></li>
+              <li><a href="#how-it-works">How It Works</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </nav>
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="reveal-text">Supercharge Your Workflow with AI Chatbots</h1>
+            <p class="reveal-text delay-1">Intelligent assistants that seamlessly integrate with your favorite tools and platforms.</p>
+            <a href="#bots" class="button primary reveal-text delay-2">Explore Bots</a>
+          </div>
+          <div class="hero-image reveal-image">
+            <div class="floating-elements">
+              <div class="floating-bubble b1"></div>
+              <div class="floating-bubble b2"></div>
+              <div class="floating-bubble b3"></div>
+            </div>
+            <div class="chat-container">
+              <div class="chat-header">
+                <div class="chat-dot"></div>
+                <div class="chat-dot"></div>
+                <div class="chat-dot"></div>
+              </div>
+              <div class="chat-body">
+                <div class="chat-message user">How can you help me with my work?</div>
+                <div class="chat-message bot">I can assist with emails, check grammar, help with documents, and more!</div>
+                <div class="chat-input">
+                  <span class="typing-animation">|</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="bots" class="bots-section">
+        <div class="container">
+          <h2 class="section-title reveal-text">Our AI Assistants</h2>
+          <p class="section-subtitle reveal-text delay-1">Discover powerful AI chatbots designed to boost your productivity</p>
+          
+          <div class="bots-grid">
+            <div class="bot-card reveal-card" data-bot="gmail">
+              <div class="bot-icon">
+                <img src="https://api.iconify.design/logos:google-gmail.svg" alt="Gmail icon">
+              </div>
+              <h3>Gmail Assistant</h3>
+              <p>Compose professional emails quickly and efficiently with AI-powered suggestions.</p>
+              <a href="bots/gmail-assistant.html" class="card-link">Learn More</a>
+            </div>
+            
+            <div class="bot-card reveal-card" data-bot="grammar">
+              <div class="bot-icon">
+                <img src="bots/statics/grammar.png" alt="Grammar icon">
+              </div>
+              <h3>Grammar Checker</h3>
+              <p>Eliminate writing errors with real-time grammar and style checking.</p>
+              <a href="bots/grammar-checker.html" class="card-link">Learn More</a>
+            </div>
+            
+            <div class="bot-card reveal-card" data-bot="docs">
+              <div class="bot-icon">
+                <img src="bots/statics/docs.png" alt="Google Docs icon">
+              </div>
+              <h3>Google Docs Bot</h3>
+              <p>Enhance your document creation with smart formatting and content suggestions.</p>
+              <a href="bots/docs-bot.html" class="card-link">Learn More</a>
+            </div>
+            
+            <div class="bot-card reveal-card" data-bot="website">
+              <div class="bot-icon">
+                <img src="bots/statics/online-chatting.png" alt="Website icon">
+              </div>
+              <h3>Website Bot</h3>
+              <p>Generate website content that aligns perfectly with your brand voice.</p>
+              <a href="bots/website-bot.html" class="card-link">Learn More</a>
+            </div>
+            
+            <!-- <div class="bot-card reveal-card" data-bot="notes">
+              <div class="bot-icon">
+                <img src="https://api.iconify.design/ion:document-text-outline.svg" alt="Notes icon">
+              </div>
+              <h3>Note-Making Bot</h3>
+              <p>Create organized, structured notes from meetings, lectures, or any content.</p>
+              <a href="bots/note-bot.html" class="card-link">Learn More</a>
+            </div>
+            
+            <div class="bot-card reveal-card" data-bot="social">
+              <div class="bot-icon">
+                <img src="https://api.iconify.design/ri:instagram-line.svg" alt="Social Media icon">
+              </div>
+              <h3>Social Media Assistant</h3>
+              <p>Craft engaging social media posts optimized for different platforms.</p>
+              <a href="bots/social-media-bot.html" class="card-link">Learn More</a>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <section id="how-it-works" class="how-it-works">
+        <div class="container">
+          <h2 class="section-title reveal-text">How It Works</h2>
+          <div class="steps-container">
+            <div class="step reveal-step">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                <h3>Choose Your Assistant</h3>
+                <p>Select the AI chatbot that fits your specific needs from our collection.</p>
+              </div>
+              <div class="step-image">
+                <img src="https://api.iconify.design/fluent:select-all-on-24-regular.svg" alt="Choose assistant">
+              </div>
+            </div>
+            
+            <div class="step reveal-step">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                <h3>Install the Extension</h3>
+                <p>Add the chatbot to your browser with just one click from the Chrome Web Store.</p>
+              </div>
+              <div class="step-image">
+                <img src="https://api.iconify.design/bi:download.svg" alt="Install extension">
+              </div>
+            </div>
+            
+            <div class="step reveal-step">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                <h3>Grant Permissions</h3>
+                <p>Allow the assistant to access relevant content to provide personalized help.</p>
+              </div>
+              <div class="step-image">
+                <img src="https://api.iconify.design/akar-icons:check-box.svg" alt="Grant permissions">
+              </div>
+            </div>
+            
+            <div class="step reveal-step">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                <h3>Start Using Your AI Assistant</h3>
+                <p>Enjoy increased productivity with your new AI-powered helper!</p>
+              </div>
+              <div class="step-image">
+                <img src="https://api.iconify.design/bi:rocket-takeoff.svg" alt="Start using">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features-section">
+        <div class="container">
+          <h2 class="section-title reveal-text">Key Features</h2>
+          <div class="features-grid">
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/fluent:brain-circuit-24-regular.svg" alt="AI icon">
+              </div>
+              <h3>Advanced AI</h3>
+              <p>Powered by state-of-the-art language models for natural interactions.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/carbon:security.svg" alt="Security icon">
+              </div>
+              <h3>Privacy Focused</h3>
+              <p>Your data stays private with end-to-end encryption and strict privacy controls.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/bi:lightning-charge.svg" alt="Speed icon">
+              </div>
+              <h3>Lightning Fast</h3>
+              <p>Get instant responses with minimal latency for seamless workflow.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/carbon:tool-kit.svg" alt="Customization icon">
+              </div>
+              <h3>Customizable</h3>
+              <p>Tailor your assistant's behavior to match your specific preferences.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/material-symbols:integration-instructions-outline.svg" alt="Integration icon">
+              </div>
+              <h3>Seamless Integration</h3>
+              <p>Works perfectly with your existing tools and workflow.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/carbon:chart-line-data.svg" alt="Learning icon">
+              </div>
+              <h3>Continuous Learning</h3>
+              <p>Adapts to your style and preferences over time for better assistance.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="faq-section">
+        <div class="container">
+          <h2 class="section-title reveal-text">Frequently Asked Questions</h2>
+          
+          <div class="faq-container">
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Are these chatbots free to use?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>All our chatbots offer a free tier with limited features. Premium versions with advanced capabilities are available through affordable subscription plans.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>How secure is my data with these AI assistants?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Your privacy is our top priority. All data is encrypted end-to-end, and we follow strict data protection guidelines. We never sell your data to third parties.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Do I need to create an account to use these bots?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Basic functionality is available without an account. Creating a free account allows you to save preferences and access additional features.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>What browsers are supported?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Our chatbots work on all modern browsers including Chrome, Firefox, Safari, and Edge. For the best experience, we recommend using the latest browser versions.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Can I use these assistants on mobile devices?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Yes! All our chatbots are designed to work seamlessly across desktop and mobile devices, ensuring you have assistance wherever you go.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <a href="index.html">
+                <span>AI</span>Assistants
+              </a>
+              <p>Intelligent chatbots for every need</p>
+            </div>
+            
+            <div class="footer-links">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#bots">Chatbots</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#faq">FAQ</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-links">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">API</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+              <h4>Stay Updated</h4>
+              <p>Subscribe to our newsletter for the latest updates and new features.</p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          
+          <div class="footer-bottom">
+            <p>&copy; 2023 AI Assistants. All rights reserved.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Twitter"><img src="https://api.iconify.design/mdi:twitter.svg" alt="Twitter"></a>
+              <a href="#" aria-label="LinkedIn"><img src="https://api.iconify.design/mdi:linkedin.svg" alt="LinkedIn"></a>
+              <a href="#" aria-label="GitHub"><img src="https://api.iconify.design/mdi:github.svg" alt="GitHub"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script src="scripts.js" defer></script>
+    <script src="public/chatbot.js" defer></script>
+  </body>
+</html>

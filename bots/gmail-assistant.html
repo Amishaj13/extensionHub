@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gmail Assistant - AI Chatbot</title>
+    <meta name="description" content="Powerful AI assistant for Gmail to help you write better emails faster" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../public/chatbot.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="root">
+      <header class="navbar">
+        <div class="container">
+          <div class="logo">
+            <a href="../index.html">
+              <span>AI</span>Assistants
+            </a>
+          </div>
+          <nav>
+            <ul>
+              <li><a href="../index.html#bots">Chatbots</a></li>
+              <li><a href="../index.html#how-it-works">How It Works</a></li>
+              <li><a href="../index.html#features">Features</a></li>
+              <li><a href="../index.html#faq">FAQ</a></li>
+            </ul>
+          </nav>
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+
+      <section class="bot-hero">
+        <div class="container">
+          <div class="bot-hero-content">
+            <div class="back-link">
+              <a href="../index.html#bots">
+                <img src="https://api.iconify.design/material-symbols:arrow-back-rounded.svg" alt="Back">
+                Back to All Bots
+              </a>
+            </div>
+            <div class="bot-icon large">
+              <img src="https://api.iconify.design/logos:google-gmail.svg" alt="Gmail icon">
+            </div>
+            <h1 class="reveal-text">Gmail Assistant</h1>
+            <p class="bot-description reveal-text delay-1">Your AI-powered email writing companion that helps you draft professional emails in seconds.</p>
+            
+            <div class="cta-buttons reveal-text delay-2">
+              <a href="https://chrome.google.com/webstore/" class="button primary" target="_blank">
+                <img src="https://api.iconify.design/bi:download.svg" alt="Install">
+                Install from Chrome Web Store
+              </a>
+              <a href="#demo" class="button secondary">
+                See Demo
+              </a>
+            </div>
+          </div>
+          
+          <div class="bot-hero-image reveal-image">
+            <div class="demo-window">
+              <div class="demo-window-header">
+                <div class="demo-dot"></div>
+                <div class="demo-dot"></div>
+                <div class="demo-dot"></div>
+                <div class="demo-title">Gmail - New Message</div>
+              </div>
+              <div class="demo-content">
+                <div class="gmail-compose">
+                  <div class="compose-header">
+                    <div class="compose-field">
+                      <span>To:</span>
+                      <span class="compose-input">client@example.com</span>
+                    </div>
+                    <div class="compose-field">
+                      <span>Subject:</span>
+                      <span class="compose-input">Project Proposal Follow-up</span>
+                    </div>
+                  </div>
+                  <div class="compose-body">
+                    <div class="typing-effect">
+                      <p>Dear Client,</p>
+                      <p>I hope this email finds you well. I'm following up on our discussion about the project proposal we presented last week.</p>
+                      <p>We've incorporated your feedback and would like to schedule a meeting to go through the revised proposal.</p>
+                      <p>Would any of these times work for you?</p>
+                      <ul>
+                        <li>Tuesday, 10:00 AM - 11:00 AM</li>
+                        <li>Wednesday, 2:00 PM - 3:00 PM</li>
+                        <li>Thursday, 11:00 AM - 12:00 PM</li>
+                      </ul>
+                      <p>Looking forward to your response.</p>
+                      <p>Best regards,<br>Your Name</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="assistant-prompt">
+                  <div class="assistant-icon">
+                    <img src="https://api.iconify.design/mdi:robot.svg" alt="AI Assistant">
+                  </div>
+                  <div class="assistant-message">
+                    <p>I've drafted a follow-up email. Would you like me to make any adjustments?</p>
+                    <div class="assistant-actions">
+                      <button>Make it more casual</button>
+                      <button>Add more details</button>
+                      <button>Shorten it</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="bot-features">
+        <div class="container">
+          <h2 class="section-title reveal-text">Key Features</h2>
+          
+          <div class="features-grid three-columns">
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/mdi:email-fast-outline.svg" alt="Quick Draft">
+              </div>
+              <h3>Draft Emails Quickly</h3>
+              <p>Create professional emails in seconds with AI suggestions based on your intent and context.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/material-symbols:auto-fix.svg" alt="Grammar">
+              </div>
+              <h3>Grammar & Style Check</h3>
+              <p>Automatically detect and fix grammar mistakes, spelling errors, and improve writing style.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/ri:emotion-line.svg" alt="Tone">
+              </div>
+              <h3>Tone Adjustment</h3>
+              <p>Adjust the tone of your emails to be more professional, friendly, or persuasive as needed.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/fluent:text-bullet-list-square-20-regular.svg" alt="Templates">
+              </div>
+              <h3>Email Templates</h3>
+              <p>Access a library of templates for common email types or create your own custom templates.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/material-symbols:translate.svg" alt="Translation">
+              </div>
+              <h3>Language Translation</h3>
+              <p>Translate your emails to different languages with just one click, maintaining context and tone.</p>
+            </div>
+            
+            <div class="feature-card reveal-card">
+              <div class="feature-icon">
+                <img src="https://api.iconify.design/carbon:machine-learning-model.svg" alt="Learning">
+              </div>
+              <h3>Smart Learning</h3>
+              <p>The assistant learns from your writing style over time to provide more personalized suggestions.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="demo" class="how-it-works bot-demo">
+        <div class="container">
+          <h2 class="section-title reveal-text">How It Works</h2>
+          
+          <div class="steps-container interactive">
+            <div class="demo-controls">
+              <button class="demo-nav prev" disabled>
+                <img src="https://api.iconify.design/material-symbols:arrow-back-ios-rounded.svg" alt="Previous">
+              </button>
+              <div class="demo-indicators">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <button class="demo-nav next">
+                <img src="https://api.iconify.design/material-symbols:arrow-forward-ios-rounded.svg" alt="Next">
+              </button>
+            </div>
+            
+            <div class="demo-slides">
+              <div class="demo-slide active">
+                <div class="step-content">
+                  <h3>1. Enable the Assistant</h3>
+                  <p>Once installed, open Gmail and start a new email. The Gmail Assistant icon will appear in your compose window.</p>
+                </div>
+                <div class="step-image">
+                  <img src="https://placehold.co/600x400/e9ecef/5d6b82?text=Gmail+Compose+Window" alt="Enable Assistant">
+                </div>
+              </div>
+              
+              <div class="demo-slide">
+                <div class="step-content">
+                  <h3>2. Describe Your Intent</h3>
+                  <p>Tell the assistant what kind of email you want to write, such as "follow up on client meeting" or "send project update".</p>
+                </div>
+                <div class="step-image">
+                  <img src="https://placehold.co/600x400/e9ecef/5d6b82?text=Intent+Description" alt="Describe Intent">
+                </div>
+              </div>
+              
+              <div class="demo-slide">
+                <div class="step-content">
+                  <h3>3. Review and Edit</h3>
+                  <p>The assistant will generate a draft based on your request. Review the content and make any necessary adjustments.</p>
+                </div>
+                <div class="step-image">
+                  <img src="https://placehold.co/600x400/e9ecef/5d6b82?text=Email+Draft+Review" alt="Review Draft">
+                </div>
+              </div>
+              
+              <div class="demo-slide">
+                <div class="step-content">
+                  <h3>4. Send Your Perfect Email</h3>
+                  <p>Once you're satisfied with the email, simply send it as you normally would. The assistant will learn from your preferences for future suggestions.</p>
+                </div>
+                <div class="step-image">
+                  <img src="https://placehold.co/600x400/e9ecef/5d6b82?text=Send+Email" alt="Send Email">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonials">
+        <div class="container">
+          <h2 class="section-title reveal-text">What Users Say</h2>
+          
+          <div class="testimonials-slider">
+            <div class="testimonial-card active reveal-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <img src="https://api.iconify.design/mdi:format-quote-open.svg" alt="Quote">
+                </div>
+                <p>Gmail Assistant has saved me hours each week. I can now respond to emails in half the time, and the suggestions are incredibly accurate.</p>
+                <div class="testimonial-author">
+                  <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                  <div>
+                    <h4>Sarah Johnson</h4>
+                    <p>Marketing Manager</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card reveal-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <img src="https://api.iconify.design/mdi:format-quote-open.svg" alt="Quote">
+                </div>
+                <p>As someone who isn't a native English speaker, this tool has been invaluable. It helps me write professional emails without worrying about grammar mistakes.</p>
+                <div class="testimonial-author">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Miguel Rodriguez">
+                  <div>
+                    <h4>Miguel Rodriguez</h4>
+                    <p>Software Engineer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="testimonial-card reveal-card">
+              <div class="testimonial-content">
+                <div class="quote-icon">
+                  <img src="https://api.iconify.design/mdi:format-quote-open.svg" alt="Quote">
+                </div>
+                <p>This assistant understands context so well. It's like having a professional writer helping me craft the perfect email for every situation.</p>
+                <div class="testimonial-author">
+                  <img src="https://randomuser.me/api/portraits/women/67.jpg" alt="Lisa Chen">
+                  <div>
+                    <h4>Lisa Chen</h4>
+                    <p>Business Consultant</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial-dots">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" class="faq-section">
+        <div class="container">
+          <h2 class="section-title reveal-text">Frequently Asked Questions</h2>
+          
+          <div class="faq-container">
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Is Gmail Assistant free to use?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Gmail Assistant offers a free tier with basic features like grammar checking and simple suggestions. Advanced features like tone analysis and professional templates are available in our premium plan.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Does the assistant have access to my emails?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>The assistant only accesses the current email you're composing to provide suggestions. It doesn't read or store your inbox contents or sent emails. All processing happens locally on your device for maximum privacy.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>How accurate are the AI suggestions?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Our AI model is trained on professional business communications and achieves over 95% accuracy in grammar and style suggestions. The more you use it, the better it adapts to your personal writing style.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>Can I use this with email clients other than Gmail?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>Currently, Gmail Assistant is optimized for Google's Gmail interface. We're working on versions for Outlook, Yahoo Mail, and other popular email clients that will be available soon.</p>
+              </div>
+            </div>
+            
+            <div class="faq-item reveal-text">
+              <div class="faq-question">
+                <h3>How do I uninstall the assistant if needed?</h3>
+                <span class="faq-toggle">+</span>
+              </div>
+              <div class="faq-answer">
+                <p>You can disable or uninstall the assistant like any other Chrome extension. Go to Chrome's extension management page, find Gmail Assistant, and click "Remove" or toggle the enable switch.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="container">
+          <div class="cta-card reveal-card">
+            <h2>Ready to Transform Your Email Experience?</h2>
+            <p>Join thousands of professionals who save time and write better emails with Gmail Assistant.</p>
+            <a href="https://chrome.google.com/webstore/" class="button primary" style="background-color: white; color: black;" target="_blank">
+              <img src="https://api.iconify.design/bi:download.svg" alt="Install">
+              Install Free Extension
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <a href="../index.html">
+                <span>AI</span>Assistants
+              </a>
+              <p>Intelligent chatbots for every need</p>
+            </div>
+            
+            <div class="footer-links">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="../index.html#bots">Chatbots</a></li>
+                <li><a href="../index.html#how-it-works">How It Works</a></li>
+                <li><a href="../index.html#features">Features</a></li>
+                <li><a href="../index.html#faq">FAQ</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-links">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">API</a></li>
+              </ul>
+            </div>
+            
+            <div class="footer-newsletter">
+              <h4>Stay Updated</h4>
+              <p>Subscribe to our newsletter for the latest updates and new features.</p>
+              <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Subscribe</button>
+              </form>
+            </div>
+          </div>
+          
+          <div class="footer-bottom">
+            <p>&copy; 2023 AI Assistants. All rights reserved.</p>
+            <div class="footer-social">
+              <a href="#" aria-label="Twitter"><img src="https://api.iconify.design/mdi:twitter.svg" alt="Twitter"></a>
+              <a href="#" aria-label="LinkedIn"><img src="https://api.iconify.design/mdi:linkedin.svg" alt="LinkedIn"></a>
+              <a href="#" aria-label="GitHub"><img src="https://api.iconify.design/mdi:github.svg" alt="GitHub"></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script src="../scripts.js"></script>
+    <script src="../public/chatbot.js" defer></script>
+  </body>
+</html>
