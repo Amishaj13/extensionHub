@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const typingIndicator = document.getElementById('typing-indicator');
   
   // Backend API URL
-  const BACKEND_ENDPOINT = 'http://localhost:5000/chat';
+  const BACKEND_ENDPOINT = 'https://extensionhub.onrender.com/chat';
   
   // Store conversation ID
   let conversationId = "default";
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
     try {
       // First try the health endpoint
       try {
-        const healthResponse = await fetch('http://localhost:5000/health', {
+        const healthResponse = await fetch('https://extensionhub.onrender.com/health', {
           method: 'GET',
           mode: 'cors',
           headers: {
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
         
       // If health endpoint failed, try a simple OPTIONS request to the main endpoint
-      const response = await fetch('http://localhost:5000/chat', {
+      const response = await fetch('https://extensionhub.onrender.com/chat', {
         method: 'OPTIONS',
         mode: 'cors',
         headers: {
