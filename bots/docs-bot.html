@@ -34,7 +34,7 @@
       }
       
       .user-message {
-        background-color: var(--secondary);
+        background-color: var(--primary);
         align-self: flex-end;
         margin-left: auto;
       }
@@ -166,12 +166,12 @@
                 <div class="demo-title">Document Editor</div>
               </div>
               <div class="demo-content">
-                <div class="text-editor">
+                <!-- <div class="text-editor">
                   <div class="text-content">
                     <p>The implementation of AI-driven solutions has resulted in <span class="suggestion">significant</span> improvements in productivity across various departments.</p>
                     <p>Our team <span class="error">have</span> identified several opportunities for further optimization using machine learning algorithms.</p>
                   </div>
-                </div>
+                </div> -->
                 <div class="assistant-prompt">
                   <div class="assistant-icon">
                     <img src="https://api.iconify.design/mdi:robot.svg" alt="AI Assistant">
@@ -181,16 +181,27 @@
                     <div class="chat-interface">
                       <div class="chat-history">
                         <div class="user-message">
-                          <p>How can I improve the flow of my introduction paragraph?</p>
+                          <p>summarized given document and in very brief and give me important points</p>
                         </div>
                         <div class="bot-response">
-                          <p>I've analyzed your introduction and have some suggestions:</p>
-                          <ul>
-                            <li>Consider starting with a more engaging hook to capture reader attention</li>
-                            <li>Your third sentence could connect more clearly to your main thesis</li>
-                            <li>Try adding a transition sentence between your background and your key argument</li>
-                          </ul>
-                          <p>Would you like me to suggest specific rewrites for any of these points?</p>
+                          <p>Summary:
+                            Mount Kilimanjaro in Tanzania is Africa’s tallest mountain (5,895 m) and the world’s highest free-standing volcano. It has three cones: Kibo (dormant), Mawenzi, and Shira (extinct). Its glaciers are rapidly melting. It's a UNESCO site and popular for hiking.</p>
+                            <p>key points:</p>
+                            <ul style="list-style-type: disc;">
+                              <li>Located in Tanzania</li> 
+                              <li>Height: 5,895 meters (19,340 feet)</li>
+                              <li>Three cones: Kibo, Mawenzi, Shira</li>
+                              <li>Kibo is dormant; Mawenzi and Shira are extinct</li>
+                              <li>Highest point is Uhuru Peak</li>
+                              <li>Over 90% of glaciers have melted since 1900</li>
+                              <li>First local climber: Yohani Kinyala Lauwo (1889)</li>
+                              <li>UNESCO World Heritage Site since 1987</li>
+                              <li>Part of Kilimanjaro National Park (since 1973)</li>
+                              <li>Home to wildlife like the blue monkey</li>
+                              <li>Popular hiking spot; risk of altitude sickness</li>
+                            </ul>
+                            
+                          <p>Would you like me to suggest specific information for any of these points?</p>
                         </div>
                       </div>
                       <div class="input-area">
@@ -201,9 +212,8 @@
                       </div>
                     </div>
                     <div class="assistant-actions">
-                      <button>Apply Suggestions</button>
-                      <button>Format Document</button>
-                      <button>Check Citations</button>
+                      <button>summarized this doc</button>
+                      <button>Extract key points?</button>
                     </div>
                   </div>
                 </div>
@@ -326,7 +336,7 @@
                   <p>Implement AI-powered improvements with one click and watch your document transform into professional-quality content.</p>
                 </div>
                 <div class="step-image">
-                  <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=80" alt="Apply Enhancements">
+                  <img src="./statics/apply.png" alt="Apply Enhancements">
                 </div>
               </div>
             </div>
